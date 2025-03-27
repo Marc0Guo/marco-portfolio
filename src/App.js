@@ -7,7 +7,7 @@ import Navbar from './Components/NavBar';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/marco-portfolio">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,4 +20,3 @@ function App() {
 }
 
 export default App;
-
