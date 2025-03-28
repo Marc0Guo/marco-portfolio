@@ -2,16 +2,14 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import profileImg from '../assets/Marco.png';
 import ExperienceBlock from '../Components/ExperienceBlock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
   return (
     <Container className="py-5">
       <Row className="gx-4 gy-5">
-        {/* Left Sidebar - Bento Style */}
+        {/* Left Sidebar */}
         <Col xs={12} md={4}>
           <Card className="p-4 shadow-sm">
             <div className="text-center">
@@ -30,6 +28,9 @@ function Home() {
               </p>
               {/* Social Icons Row */}
               <div className="d-flex justify-content-center gap-3 flex-wrap mt-3 mb-3">
+                <a href="mailto:jguo27@cs.washington.edu">
+                  <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                </a>
                 <a href="https://github.com/Marc0Guo" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithub} size="lg" />
                 </a>
@@ -55,7 +56,7 @@ function Home() {
 
         {/* Main Content */}
         <Col xs={12} md={8}>
-  <Card className="p-4 shadow-sm border-0 mb-4">
+  <Card className="p-4 shadow-sm mb-4">
     <Card.Body>
       <Card.Title as="h2" className="mb-3">Hello! 👋</Card.Title>
       <Card.Text className="lead">
@@ -73,9 +74,9 @@ function Home() {
 
 
 
-<Card className="mb-4 shadow-sm border-secondary">
+<Card className="p-4 shadow-sm mb-4">
   <Card.Body>
-    <Card.Title className="text-success mb-4">🎓 Teaching Experience</Card.Title>
+    <Card.Title className="text mb-4">🎓 Teaching Experience</Card.Title>
                           <hr className="my-4" />
 
     <ExperienceBlock
