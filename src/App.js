@@ -1,21 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import Navbar from './Components/NavBar';
+// src/App.js
+import React from 'react';
+import './App.css';
+import HeroSection from './components/Hero/HeroSection';
+import AboutTerminal from './components/About/AboutTerminal';
+import AchievementTimeline from './components/Timeline/Timeline';
+import ProjectCarousel from './components/Projects/Project';
 
 function App() {
   return (
-    <Router basename="/marco-portfolio">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <div className="App flex min-h-screen flex-col items-center justify-between">
+      <HeroSection />
+      <AboutTerminal />
+      <AchievementTimeline />
+      <ProjectCarousel />
+    </div>
   );
 }
 

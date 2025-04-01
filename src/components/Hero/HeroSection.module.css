@@ -1,0 +1,59 @@
+/* src/components/HeroSection.module.css */
+.heroSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+    background-color: #0e0e0e;
+    color: white;
+}
+
+.heroContent {
+    max-width: 600px;
+}
+
+.helloText {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #7f00ff;
+}
+
+.nameText {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff4ecd;
+}
+
+.roleText {
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+.introText {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.resumeButton {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #7f00ff, #ff4ecd);
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.resumeButton:hover {
+    transform: scale(1.05);
+}
+
+.heroAvatar img {
+    width: 300px;
+    border-radius: 50%;
+}
