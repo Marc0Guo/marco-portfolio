@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: 'LoRA fine tuning',
     description: 'Fine tuned U-Net Image Segmentation using LoRa on GTA5 dataset.',
-    image: process.env.PUBLIC_URL + '/assets/images/Marco.png',
+    image: process.env.PUBLIC_URL + '/assets/images/gta5.png',
     tag: 'Data Science',
     link: 'GTA5.pdf',
   },
@@ -39,6 +39,41 @@ export const projects = [
     tag: 'UI/UX',
     link: 'https://www.figma.com/proto/LwjP9jGd7bmgFA2xF9OAOr/TEMPAD-2.0?page-id=24%3A12&node-id=59-106&p=f&viewport=146%2C342%2C0.22&t=kghqmCUc6w09TCz0-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=59%3A106',
   },
+    {
+    id: 6,
+    title: 'Healthcare Cost Prediction Model - Datathon 2025',
+    description: 'Developed machine learning models to predict hospital inpatient mean costs using healthcare datah',
+    image: process.env.PUBLIC_URL + '/assets/images/datathon2025.svg',
+    tag: 'Data Science',
+      link: 'https://www.canva.com/design/DAGlxQG7m3g/9873kRtrmPSsXDKxACnhmg/edit',
+        github: 'https://github.com/Marc0Guo/NY-Hospital-Analysis',
+  },
+        {
+    id: 7,
+    title: 'PetSwipe',
+    description: 'Built an iOS mobile app using Swift and UIKit that helps users discover and match with adoptable pets through a swipe-based interface.',
+    image: process.env.PUBLIC_URL + '/assets/images/petswipe.svg',
+    tag: 'Data Science',
+        github: 'https://github.com/wena04/petswipe',
+  },
+                {
+    id: 8,
+    title: 'RoboPilot',
+    description: 'Designed a multi-agent system for Customer Service using Azure AI Foundry.',
+    image: process.env.PUBLIC_URL + '/assets/images/robopilot.png',
+    tag: 'AI',
+                  github: 'https://github.com/Marc0Guo/RoboPilot',
+        link:" https://www.canva.com/design/DAG6g001C1k/9jax90uUDxefnl2S98eNaQ/edit?utm_content=DAG6g001C1k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+  },
+                                {
+    id: 9,
+    title: 'MCP Attack Recreation',
+    description: 'Recreated 4 common MCP attacks using Python and FastMCP library.',
+    image: process.env.PUBLIC_URL + '/assets/images/mcp.png',
+    tag: 'AI',
+                                  github: 'https://github.com/Marc0Guo/INFO415-MCPServerAttacks',
+        link:"https://docs.google.com/presentation/d/1hWP839S9QBLO0tWtW4nVEBia7MTsSt7o45W6x9LfdpU/edit?usp=sharing",
+  },
 ];
 
-export const tags = ['All', 'Frontend', 'UI/UX', 'Backend', 'Data Science'];
+export const tags = ['All', 'Frontend', 'UI/UX', 'Backend', 'Data Science', "AI"];

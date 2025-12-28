@@ -4,45 +4,44 @@ const achievements = [
         date: "Sep 2023 – June 2027",
     location: "Seattle, WA",
     description:
-      "I started my college journey at University of washigton in Informatics with a strong interest in Data Science and Software Engineering",
+      "Bachelor of Science (B.S.) in Informatics & Computer Science",
     },
     {
     title: "Research Assistant @ Code And Cognition Lab",
     date: "Sep 2023 – Feb 2024",
     location: "University of Washington",
     description:
-      "I joined the research group under the guidance of Dr. Amy J. KO and worked on open-source project 'Wordplay Dev' ",
+      "Joined the research group under the guidance of Dr. Amy J. KO and worked on locolization and verfication of open-source programming language Wordplay Dev ",
   },
-    {
-    title: "Intern @ 51World",
-    role: "Dynamic Simulation Team",
+  {
+    title: "Data Scientist Intern @ 51World",
     date: "Jun 2024 – Sep 2024",
     location: "Shanghai, China",
     description:
-      "I got my first Internship at 51World, exploring deep learning traffic simulation models!",
-    },
-    {
-    title: "Teaching Assistant @ INFO180",
-    date: "Sep 2024 – Dec 2024",
-    location: "University of Washington",
+      "Re-implemented multiple traffic intersection simulation models. Replaced a rule-based data retrieval system with a vector database to support semantic search over vehicle trajectory data.",
+  },
+  {
+    title: "Teaching Assistant @ University of Washington iSchool",
+    date: "Sep 2024 – Present",
+    location: "Seattle, WA",
     description:
-      "I joined the teaching group of INFO180:  Introduction to Data Science",
-    },
+      "Supported INFO courses including INFO180, INFO370, INFO201",
+  },
 
   {
     title: "Research Assistant @ Faith + AI",
     date: "Sept 2024 – Mar 2025",
     location: "University of Washington",
     description:
-      "I joined the research group 'Faith + AI' under the guidance of Dr. Wes Eli King, analyzing Buddhist chatbot and explore web archiving",
+      "Joined the research group 'Faith + AI' under the guidance of Dr. Wes Eli King, analyzing Buddhist chatbot and explore web archiving",
   },
-      {
-    title: "Teaching Assistant @ INFO370",
-    date: "Jan 2025 – Mar 2025",
+  {
+    title: "Research Assistant @ Saveski Lab",
+    date: "Sep 2025 – Present",
     location: "University of Washington",
     description:
-      "I joined the teaching group of INFO370: Core Methods in Data Science",
-    }
+      "Joined the research group under the guidance of Dr. Martin Saveski. Analyzed large-scale Twitter Community Notes data and built reproducible LLM based annotation pipeline.",
+  }
 
 ];
 

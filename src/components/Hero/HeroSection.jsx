@@ -10,7 +10,7 @@ const HeroSection = () => {
           <span className={styles.helloText}>Hello, I'm </span>
           <span className={styles.nameText}>Marco</span>
         </h1>
-        <h2 className={styles.roleText}>UI/UX Designer</h2>
+        <h2 className={styles.roleText}>Software Engineer</h2>
         <p className={styles.introText}>
           As a full-stack developer, I am dedicated to turning ideas into innovative web applications.
           Explore my latest projects, showcasing my expertise in software development.
