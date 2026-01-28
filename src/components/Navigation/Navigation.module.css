@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 5%;
+  background: rgba(248, 249, 250, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation.scrolled {
+  padding: 1rem 5%;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.navContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Manrope', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateX(3px);
+}
+
+.logoMark {
+  font-size: 1.5rem;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logoMark {
+  color: #212529;
+  transform: rotate(45deg);
+}
+
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212529;
+  letter-spacing: -0.02em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navLink {
+  padding: 0.6rem 1.2rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0.3rem;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #495057, transparent);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: #212529;
+}
+
+.navLink:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.navLink.active {
+  color: #212529;
+  font-weight: 600;
+}
+
+.navLink.active::after {
+  transform: translateX(-50%) scaleX(1);
+  background: #495057;
+}
+
+.linkedinButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.2);
+}
+
+.linkedinButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+  background: linear-gradient(135deg, #005885 0%, #004060 100%);
+}
+
+.linkedinButton svg {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .navigation {
+    padding: 1rem 3%;
+  }
+
+  .navLinks {
+    position: static;
+    transform: none;
+    gap: 0.2rem;
+  }
+
+  .navLink {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .linkedinButton span {
+    display: none;
+  }
+
+  .linkedinButton {
+    padding: 0.7rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    padding: 0.8rem 3%;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .navLinks {
+    gap: 0;
+  }
+
+  .navLink {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
