@@ -1,0 +1,13 @@
+/* Global App Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
