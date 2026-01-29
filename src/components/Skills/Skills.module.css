@@ -111,7 +111,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -120,26 +120,27 @@
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.5s ease-out backwards;
   padding: 0.5rem;
+  width: 100px;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .iconWrapper:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px);
 }
 
 .skillIcon {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  transition: all 0.3s ease;
+  transition: filter 0.3s ease;
   filter: grayscale(0.2);
 }
 
 .iconWrapper:hover .skillIcon {
-  filter: grayscale(0);
-  transform: scale(1.1);
+  filter: grayscale(0) brightness(1.1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
 }
 
 .skillName {
@@ -148,12 +149,15 @@
   font-weight: 500;
   color: #495057;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
+  width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .iconWrapper:hover .skillName {
   color: #212529;
-  font-weight: 600;
 }
 
 @keyframes fadeInUp {
@@ -204,6 +208,10 @@
     gap: 1.5rem;
   }
 
+  .iconWrapper {
+    width: 70px;
+  }
+
   .skillIcon {
     width: 50px;
     height: 50px;
@@ -249,6 +257,10 @@
   .iconsGrid {
     gap: 1.2rem;
     justify-content: center;
+  }
+
+  .iconWrapper {
+    width: 75px;
   }
 
   .skillIcon {
