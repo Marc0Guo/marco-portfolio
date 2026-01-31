@@ -41,6 +41,15 @@ const Project = () => {
             <div className={styles.content}>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              {project.techStack && (
+                <div className={styles.techStack}>
+                  {project.techStack.map((tech, index) => (
+                    <span key={index} className={styles.techTag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className={styles.linkIcons}>
                   {project.github && (
     <a

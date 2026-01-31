@@ -8,10 +8,25 @@
 }
 
 .title {
+    font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: #212529;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #6c757d, transparent);
+    border-radius: 2px;
 }
 
 .tagsWrapper {
@@ -41,65 +56,56 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
 }
 
 .card {
-    width: 320px;
+    width: 100%;
     min-height: 420px;
     background-color: #ffffff;
-    border-radius: 1rem;
+    border-radius: 12px;
     overflow: hidden;
-    transition: border 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    z-index: -1;
-    background: linear-gradient(45deg, #f8f9fa, #e9ecef, #e9ecef, #f8f9fa);
-    background-size: 600% 600%;
-    border-radius: inherit;
-    filter: blur(10px);
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    animation: glow 8s ease infinite;
-}
-
-.card:hover::before {
-    opacity: 0.5;
-    transform: scale(1.03);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
-@keyframes glow {
-    0% {
-        background-position: 0% 50%;
-    }
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
+.techTag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
 
-    100% {
-        background-position: 0% 50%;
-    }
+.techTag:hover {
+    background-color: #e9ecef;
+    color: #495057;
 }
 
 .image {
@@ -116,6 +122,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    gap: 0.75rem;
 }
 
 .tagLabel {
@@ -129,21 +136,25 @@
 }
 
 .content h3 {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     color: #212529;
     line-height: 1.3;
     word-wrap: break-word;
+    font-weight: 700;
 }
 
 .content p {
+    font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
     color: #6c757d;
     line-height: 1.6;
     flex: 1;
-    margin-bottom: 0.5rem;
+    margin: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-weight: 400;
 }
 
 .link {
@@ -163,7 +174,7 @@
 .linkIcons {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #e9ecef;
 }
@@ -184,15 +195,17 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .projectSection {
+        padding: 4rem 1rem 5rem;
+    }
+
     .grid {
         grid-template-columns: 1fr;
-        padding: 0 1rem;
+        gap: 1.25rem;
     }
 
     .card {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
+        min-height: auto;
     }
 
     .content {
@@ -206,16 +219,23 @@
     .content p {
         font-size: 0.9rem;
     }
+
+    .techTag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
 @media (min-width: 1025px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }

@@ -1,7 +1,19 @@
 .achievements-section {
-    padding: 4rem 2rem;
-    background-color: #f8f9fa;
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
     color: #212529;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievements-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .achievements-section > h2 {
@@ -9,16 +21,34 @@
 }
 
 .achievements-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: #212529;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.achievements-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #6c757d, transparent);
+    border-radius: 2px;
 }
 
 .timeline-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 0;
+    position: relative;
 }
 
 /* 确保timeline左对齐 */
@@ -62,65 +92,202 @@
 }
 
 .timeline-container .MuiTimelineConnector-root {
-    background-color: #bdbdbd !important;
-    width: 2px !important;
+    background: linear-gradient(180deg, #6c757d 0%, #adb5bd 50%, #6c757d 100%) !important;
+    width: 3px !important;
     flex-grow: 1 !important;
     min-height: 40px !important;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-container .MuiTimelineItem-root:hover ~ .MuiTimelineItem-root .MuiTimelineConnector-root,
+.timeline-container .MuiTimelineItem-root:hover .MuiTimelineConnector-root {
+    opacity: 0.7;
 }
 
 .timeline-date {
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    letter-spacing: 0.02em;
+    padding-right: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-container .MuiTimelineItem-root:hover .timeline-date {
+    color: #495057;
+    transform: translateX(-5px);
 }
 
 .timeline-paper {
-    padding: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.timeline-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #495057, #6c757d, #adb5bd);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-paper:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-4px) translateX(4px);
+    border-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+.timeline-paper:hover::before {
+    transform: scaleX(1);
 }
 
 .timeline-title {
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #212529;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+}
+
+.timeline-paper:hover .timeline-title {
+    color: #495057;
 }
 
 .timeline-location {
-    color: #495057;
+    font-family: 'Poppins', sans-serif;
+    color: #6c757d;
     font-weight: 600;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.01em;
+}
+
+.timeline-location::before {
+    content: '📍';
+    font-size: 0.9rem;
 }
 
 .timeline-description {
+    font-family: 'Poppins', sans-serif;
     color: #6c757d;
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.timeline-paper:hover .timeline-description {
+    color: #495057;
 }
 
 .timeline-dot-icon {
-    width: 8px;
-    height: 8px;
-    background-color: #1976d2;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
     border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(73, 80, 87, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.timeline-dot-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: rgba(73, 80, 87, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon {
+    transform: scale(1.3);
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    box-shadow: 0 4px 12px rgba(73, 80, 87, 0.4);
+}
+
+.timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Animation for timeline items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-container .MuiTimelineItem-root {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.timeline-container .MuiTimelineItem-root:nth-child(6) {
+    animation-delay: 0.6s;
 }
 
 /* 移动端响应式 */
 @media only screen and (max-width: 768px) {
     .achievements-section {
-        padding: 3rem 1rem;
+        padding: 4rem 1rem;
     }
 
     .achievements-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .achievements-title::after {
+        width: 60px;
+        height: 3px;
     }
 
     .timeline-container {
@@ -128,23 +295,28 @@
     }
 
     .timeline-date {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         padding-top: 12px;
+        padding-right: 1rem;
     }
 
     .timeline-paper {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .timeline-title {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .timeline-location {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .timeline-description {
         font-size: 0.85rem;
+    }
+
+    .timeline-paper:hover {
+        transform: translateY(-2px);
     }
 }

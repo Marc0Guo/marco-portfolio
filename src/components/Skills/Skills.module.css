@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 .skillsSection {
   padding: 6rem 5%;
@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 1rem;
@@ -48,7 +48,7 @@
 }
 
 .subtitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   color: #6c757d;
   font-weight: 400;
@@ -97,7 +97,7 @@
 }
 
 .categoryTitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #212529;
@@ -144,7 +144,7 @@
 }
 
 .skillName {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   color: #495057;
