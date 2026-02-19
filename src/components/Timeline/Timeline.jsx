@@ -46,25 +46,49 @@ const AchievementTimeline = () => {
         >
           {achievements.map((item, index) => (
             <TimelineItem key={index}>
-              <TimelineOppositeContent color="textSecondary" className="timeline-date">
+              <TimelineOppositeContent 
+                color="textSecondary" 
+                className="timeline-date"
+                sx={{ fontFamily: "'Poppins', sans-serif" }}
+              >
                 {item.date}
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineConnector sx={{ visibility: index === 0 ? 'hidden' : 'visible' }} />
-                <TimelineDot color="primary" variant="outlined">
+                <TimelineDot 
+                sx={{ 
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  padding: '8px',
+                  boxShadow: 'none'
+                }}
+              >
                   <div className="timeline-dot-icon"></div>
                 </TimelineDot>
                 <TimelineConnector sx={{ visibility: isLastItem(index) ? 'hidden' : 'visible' }} />
               </TimelineSeparator>
               <TimelineContent>
-                <Paper elevation={3} className="timeline-paper">
-                  <Typography variant="h6" component="h3" className="timeline-title">
+                <Paper elevation={0} className="timeline-paper" sx={{ boxShadow: 'none' }}>
+                  <Typography 
+                    variant="h6" 
+                    component="h3" 
+                    className="timeline-title"
+                    sx={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
                     {item.title}
                   </Typography>
-                  <Typography variant="subtitle2" className="timeline-location">
+                  <Typography 
+                    variant="subtitle2" 
+                    className="timeline-location"
+                    sx={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
                     {item.location}
                   </Typography>
-                  <Typography variant="body2" className="timeline-description">
+                  <Typography 
+                    variant="body2" 
+                    className="timeline-description"
+                    sx={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
                     {item.description}
                   </Typography>
                 </Paper>

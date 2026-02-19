@@ -5,6 +5,7 @@ export const projects = [
     description: 'Fine tuned U-Net Image Segmentation using LoRa on GTA5 dataset.',
     image: process.env.PUBLIC_URL + '/assets/images/gta5.png',
     tag: 'Data Science',
+    techStack: ['Python', 'PyTorch', 'LoRA', 'U-Net'],
     link: 'GTA5.pdf',
   },
   {
@@ -13,6 +14,7 @@ export const projects = [
     description: 'Designed "WorthyWave", a mobile app that helps people overcome imposter syndrome by building confidence through community and personal progress. ',
     image: process.env.PUBLIC_URL + '/assets/images/WorthyWave.jpg',
     tag: 'UI/UX',
+    techStack: ['Figma', 'Prototyping'],
     link: 'https://www.figma.com/proto/dfcCURCTgOwgu8GhGpVg5e/Prototype?page-id=0%3A1&node-id=1-2&p=f&viewport=241%2C-66%2C0.13&t=EqdSWmc11k1D0xst-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2',
   },
   {
@@ -21,6 +23,7 @@ export const projects = [
       description: 'Designed "Room.io", a mobile app that Help college students maintain roommate relationships and distribute chors',
       image: process.env.PUBLIC_URL + '/assets/images/RoomIo.jpg',
     tag: 'UI/UX',
+    techStack: ['Figma', 'UI Design'],
     link: 'https://www.figma.com/proto/pxdgGyPidtwJt02gE6AlmY/Room.io?page-id=0%3A1&node-id=2-7&p=f&viewport=363%2C350%2C0.4&t=dEDQXujy8LpS558X-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A7',
   },
   {
@@ -29,6 +32,7 @@ export const projects = [
     description: 'Built a music recommendation system using KNN and L2 distance. Created interactive dashboards to visualize MBTI music correlations',
     image: process.env.PUBLIC_URL + '/assets/images/MBTI.jpg',
     tag: 'Data Science',
+    techStack: ['R', 'KNN', 'Data Visualization'],
     github: 'https://github.com/Mayogoose/info201mbti',
   },
     {
@@ -37,6 +41,7 @@ export const projects = [
     description: 'Designed "AMA Loki Tempad a mobile app for time travel',
     image: process.env.PUBLIC_URL + '/assets/images/Time.jpg',
     tag: 'UI/UX',
+    techStack: ['Figma', 'Mobile Design'],
     link: 'https://www.figma.com/proto/LwjP9jGd7bmgFA2xF9OAOr/TEMPAD-2.0?page-id=24%3A12&node-id=59-106&p=f&viewport=146%2C342%2C0.22&t=kghqmCUc6w09TCz0-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=59%3A106',
   },
     {
@@ -45,6 +50,7 @@ export const projects = [
     description: 'Developed machine learning models to predict hospital inpatient mean costs using healthcare datah',
     image: process.env.PUBLIC_URL + '/assets/images/datathon2025.svg',
     tag: 'Data Science',
+    techStack: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn'],
       link: 'https://www.canva.com/design/DAGlxQG7m3g/9873kRtrmPSsXDKxACnhmg/edit',
         github: 'https://github.com/Marc0Guo/NY-Hospital-Analysis',
   },
@@ -54,6 +60,7 @@ export const projects = [
     description: 'Built an iOS mobile app using Swift and UIKit that helps users discover and match with adoptable pets through a swipe-based interface.',
     image: process.env.PUBLIC_URL + '/assets/images/petswipe.svg',
     tag: 'Data Science',
+    techStack: ['Swift', 'UIKit', 'iOS'],
         github: 'https://github.com/wena04/petswipe',
   },
                 {
@@ -62,6 +69,7 @@ export const projects = [
     description: 'Designed a multi-agent system for Customer Service using Azure AI Foundry.',
     image: process.env.PUBLIC_URL + '/assets/images/robopilot.png',
     tag: 'AI',
+    techStack: ['Azure AI', 'Multi-Agent Systems', 'Python'],
                   github: 'https://github.com/Marc0Guo/RoboPilot',
         link:" https://www.canva.com/design/DAG6g001C1k/9jax90uUDxefnl2S98eNaQ/edit?utm_content=DAG6g001C1k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
   },
@@ -71,6 +79,7 @@ export const projects = [
     description: 'Recreated 4 common MCP attacks using Python and FastMCP library.',
     image: process.env.PUBLIC_URL + '/assets/images/mcp.png',
     tag: 'AI',
+    techStack: ['Python', 'FastMCP', 'Security'],
                                   github: 'https://github.com/Marc0Guo/INFO415-MCPServerAttacks',
         link:"https://docs.google.com/presentation/d/1hWP839S9QBLO0tWtW4nVEBia7MTsSt7o45W6x9LfdpU/edit?usp=sharing",
   },
