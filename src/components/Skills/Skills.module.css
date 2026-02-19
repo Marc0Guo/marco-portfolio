@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 .skillsSection {
-  padding: 6rem 5%;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
-  color: #212529;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 5%;
+  background: linear-gradient(180deg, rgba(242,247,245,0.88) 0%, rgba(255,255,255,0.95) 50%, rgba(242,247,245,0.88) 100%);
+  color: #00473e;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .skillsSection::before {
@@ -15,42 +21,43 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 51, 44, 0.12), transparent);
 }
 
 .skillsContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
 }
 
 .headerWrapper {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .title {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 1rem;
-  color: #212529;
+  margin-bottom: 0.5rem;
+  color: #00473e;
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .titleAccent {
-  color: #6c757d;
+  color: #475d5b;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .subtitle {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  color: #6c757d;
+  font-size: 0.95rem;
+  color: #475d5b;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -58,15 +65,15 @@
 .categoriesWrapper {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .category {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #f2f7f5;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(0, 51, 44, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -79,8 +86,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #495057, #6c757d, #adb5bd);
+  height: 2px;
+  background: linear-gradient(90deg, #00473e, #faae2b);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -89,7 +96,7 @@
 .category:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 51, 44, 0.15);
 }
 
 .category:hover::before {
@@ -98,19 +105,19 @@
 
 .categoryTitle {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #212529;
-  margin: 0 0 2rem 0;
+  color: #00473e;
+  margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(0, 51, 44, 0.1);
 }
 
 .iconsGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
@@ -119,21 +126,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.4rem;
   animation: fadeInUp 0.5s ease-out backwards;
-  padding: 0.5rem;
-  width: 100px;
+  padding: 0.35rem;
+  width: 72px;
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .iconWrapper:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 
 .skillIcon {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   transition: filter 0.3s ease;
   filter: grayscale(0.2);
@@ -145,9 +152,9 @@
 
 .skillName {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  color: #495057;
+  color: #475d5b;
   text-align: center;
   transition: color 0.3s ease;
   width: 100%;
@@ -157,7 +164,7 @@
 }
 
 .iconWrapper:hover .skillName {
-  color: #212529;
+  color: #00473e;
 }
 
 @keyframes fadeInUp {
@@ -185,56 +192,11 @@
 /* Responsive Design */
 @media (max-width: 900px) {
   .skillsSection {
-    padding: 4rem 3%;
+    padding: 1.5rem 3%;
   }
 
   .title {
-    font-size: 2.2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .categoriesWrapper {
-    gap: 2rem;
-  }
-
-  .category {
-    padding: 2rem;
-  }
-
-  .iconsGrid {
-    gap: 1.5rem;
-  }
-
-  .iconWrapper {
-    width: 70px;
-  }
-
-  .skillIcon {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  .skillsSection {
-    padding: 3rem 5%;
-  }
-
-  .headerWrapper {
-    margin-bottom: 2.5rem;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .titleAccent {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .subtitle {
@@ -242,33 +204,87 @@
   }
 
   .categoriesWrapper {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .category {
-    padding: 1.5rem;
+    padding: 1rem 1.25rem;
   }
 
   .categoryTitle {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .iconsGrid {
-    gap: 1.2rem;
+    gap: 0.75rem;
+  }
+
+  .iconWrapper {
+    width: 64px;
+  }
+
+  .skillIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skillName {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skillsSection {
+    padding: 1rem 5%;
+  }
+
+  .headerWrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .titleAccent {
+    font-size: 1.1rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .categoriesWrapper {
+    gap: 1rem;
+  }
+
+  .category {
+    padding: 0.85rem 1rem;
+  }
+
+  .categoryTitle {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .iconsGrid {
+    gap: 0.6rem;
     justify-content: center;
   }
 
   .iconWrapper {
-    width: 75px;
+    width: 56px;
   }
 
   .skillIcon {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
   }
 
   .skillName {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
   }
 }

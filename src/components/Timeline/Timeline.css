@@ -1,9 +1,13 @@
 .achievements-section {
-    padding: 6rem 2rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-    color: #212529;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(242,247,245,0.9) 50%, rgba(255,255,255,0.95) 100%);
+    color: #00473e;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .achievements-section::before {
@@ -13,7 +17,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 51, 44, 0.12), transparent);
 }
 
 .achievements-section > h2 {
@@ -22,10 +26,10 @@
 
 .achievements-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 4rem;
-    color: #212529;
+    margin-bottom: 2rem;
+    color: #00473e;
     letter-spacing: -0.02em;
     position: relative;
     display: inline-block;
@@ -35,19 +39,19 @@
 .achievements-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #6c757d, transparent);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #475d5b, transparent);
     border-radius: 2px;
 }
 
 .timeline-container {
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
     position: relative;
 }
 
@@ -58,7 +62,7 @@
 }
 
 .timeline-container .MuiTimelineItem-root {
-    min-height: 120px;
+    min-height: 90px;
     align-items: center !important;
 }
 
@@ -73,8 +77,8 @@
 
 .timeline-container .MuiTimelineContent-root {
     margin: auto 0 !important;
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
 }
 
 .timeline-container .MuiTimelineSeparator-root {
@@ -87,15 +91,15 @@
 
 .timeline-container .MuiTimelineDot-root {
     margin: 0 !important;
-    padding: 12px !important;
+    padding: 8px !important;
     z-index: 2;
 }
 
 .timeline-container .MuiTimelineConnector-root {
-    background: linear-gradient(180deg, #6c757d 0%, #adb5bd 50%, #6c757d 100%) !important;
-    width: 3px !important;
+    background: linear-gradient(180deg, #00473e 0%, #475d5b 50%, #00473e 100%) !important;
+    width: 2px !important;
     flex-grow: 1 !important;
-    min-height: 40px !important;
+    min-height: 28px !important;
     opacity: 0.4;
     transition: opacity 0.3s ease;
 }
@@ -108,23 +112,23 @@
 .timeline-date {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.9rem;
-    color: #6c757d;
+    font-size: 0.8rem;
+    color: #475d5b;
     letter-spacing: 0.02em;
-    padding-right: 2rem;
+    padding-right: 1.25rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-date {
-    color: #495057;
+    color: #00473e;
     transform: translateX(-5px);
 }
 
 .timeline-paper {
-    padding: 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7f5 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 51, 44, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -137,18 +141,18 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #495057, #6c757d, #adb5bd);
+    height: 2px;
+    background: linear-gradient(90deg, #00473e, #faae2b);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-paper:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
-    transform: translateY(-4px) translateX(4px);
-    border-color: rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-3px) translateX(3px);
+    border-color: rgba(0, 51, 44, 0.15);
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7f5 100%);
 }
 
 .timeline-paper:hover::before {
@@ -158,53 +162,53 @@
 .timeline-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #212529;
-    margin-bottom: 0.75rem;
-    font-size: 1.35rem;
+    color: #00473e;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
     letter-spacing: -0.01em;
     transition: color 0.3s ease;
 }
 
 .timeline-paper:hover .timeline-title {
-    color: #495057;
+    color: #00332c;
 }
 
 .timeline-location {
     font-family: 'Poppins', sans-serif;
-    color: #6c757d;
+    color: #475d5b;
     font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     letter-spacing: 0.01em;
 }
 
 .timeline-location::before {
     content: '📍';
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 .timeline-description {
     font-family: 'Poppins', sans-serif;
-    color: #6c757d;
-    line-height: 1.7;
-    font-size: 0.95rem;
+    color: #475d5b;
+    line-height: 1.55;
+    font-size: 0.8rem;
     font-weight: 400;
     transition: color 0.3s ease;
 }
 
 .timeline-paper:hover .timeline-description {
-    color: #495057;
+    color: #00473e;
 }
 
 .timeline-dot-icon {
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #00473e 0%, #00332c 100%);
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(73, 80, 87, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 71, 62, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
@@ -215,9 +219,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background: rgba(73, 80, 87, 0.1);
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 71, 62, 0.15);
     border-radius: 50%;
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -225,8 +229,8 @@
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon {
     transform: scale(1.3);
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    box-shadow: 0 4px 12px rgba(73, 80, 87, 0.4);
+    background: linear-gradient(135deg, #faae2b 0%, #00473e 100%);
+    box-shadow: 0 4px 12px rgba(250, 174, 43, 0.4);
 }
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon::before {
@@ -277,46 +281,45 @@
 /* 移动端响应式 */
 @media only screen and (max-width: 768px) {
     .achievements-section {
-        padding: 4rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
     .achievements-title {
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .achievements-title::after {
-        width: 60px;
-        height: 3px;
+        width: 48px;
+        height: 2px;
     }
 
     .timeline-container {
-        padding: 1rem 0;
+        padding: 0.75rem 0;
     }
 
     .timeline-date {
-        font-size: 0.8rem;
-        padding-top: 12px;
-        padding-right: 1rem;
+        font-size: 0.75rem;
+        padding-right: 0.85rem;
     }
 
     .timeline-paper {
-        padding: 1.5rem;
+        padding: 1rem 1.15rem;
     }
 
     .timeline-title {
-        font-size: 1.15rem;
+        font-size: 0.95rem;
     }
 
     .timeline-location {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .timeline-description {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 
     .timeline-paper:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) translateX(2px);
     }
 }

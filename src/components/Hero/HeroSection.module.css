@@ -4,62 +4,88 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 85vh;
-    padding: 8rem 10% 4rem;
-    background-color: #f8f9fa;
-    color: #212529;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    background-color: rgba(242, 247, 245, 0.88);
+    color: #00473e;
+    box-sizing: border-box;
 }
 
 .heroContent {
-    max-width: 600px;
+    max-width: 480px;
 }
 
 .helloText {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #6c757d;
+    color: #475d5b;
 }
 
 .nameText {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #495057;
+    color: #00473e;
 }
 
 .roleText {
-    font-size: 2.5rem;
-    margin-top: 10px;
-    color: #343a40;
+    font-size: 1.6rem;
+    margin-top: 6px;
+    color: #00473e;
+    min-height: 1.4em;
+}
+
+.typewriterCursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 2px;
+    background: #00473e;
+    animation: blink 0.8s step-end infinite;
+    vertical-align: -0.1em;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriterCursor {
+        animation: none;
+    }
 }
 
 .introText {
-    font-size: 1rem;
-    margin-top: 20px;
-    color: #6c757d;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    color: #475d5b;
+    line-height: 1.5;
 }
 
 .resumeButton {
     display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #6c757d, #adb5bd);
-    color: white;
-    border-radius: 12px;
+    margin-top: 1.25rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    background: #faae2b;
+    color: #00473e;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 71, 62, 0.15);
 }
 
 .resumeButton:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 71, 62, 0.25);
 }
 
 .heroAvatar img {
-    width: 300px;
+    width: 200px;
     border-radius: 50%;
-    border: 4px solid #e9ecef;
+    border: 3px solid rgba(0, 51, 44, 0.15);
 }
 
 /* Responsive Design */
@@ -67,8 +93,8 @@
     .heroSection {
         flex-direction: column;
         min-height: auto;
-        padding: 7rem 5% 3rem;
-        gap: 2rem;
+        padding: 4rem 5% 2rem;
+        gap: 1.5rem;
     }
 
     .heroContent {
@@ -78,37 +104,37 @@
 
     .helloText,
     .nameText {
-        font-size: 2.5rem;
+        font-size: 1.6rem;
     }
 
     .roleText {
-        font-size: 2rem;
+        font-size: 1.35rem;
     }
 
     .heroAvatar img {
-        width: 250px;
+        width: 160px;
     }
 }
 
 @media (max-width: 600px) {
     .heroSection {
-        padding: 6rem 5% 2rem;
+        padding: 3rem 5% 1.5rem;
     }
 
     .helloText,
     .nameText {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
 
     .roleText {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
     }
 
     .introText {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .heroAvatar img {
-        width: 200px;
+        width: 140px;
     }
 }

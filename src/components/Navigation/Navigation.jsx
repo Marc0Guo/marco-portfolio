@@ -1,25 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import styles from './Navigation.module.css';
+import React, { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import styles from "./Navigation.module.css";
+
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "skills", label: "Skills" },
+  { id: "achievements", label: "Experience" },
+  { id: "projects", label: "Projects" },
+];
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
+  const [indicatorTop, setIndicatorTop] = useState(0);
+  const navLinksRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const container = document.querySelector(".App-content");
+      if (!container) return;
 
-      // Determine active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'achievements', 'projects'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = container.scrollLeft + container.clientWidth / 2;
+      const sections = ["home", "skills", "achievements", "projects"];
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          const { offsetLeft, offsetWidth } = element;
+          if (
+            scrollPosition >= offsetLeft &&
+            scrollPosition < offsetLeft + offsetWidth
+          ) {
             setActiveSection(section);
             break;
           }
@@ -27,43 +39,64 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const container = document.querySelector(".App-content");
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+      // Trigger once on mount
+      handleScroll();
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScroll);
+      }
+    };
   }, []);
+
+  useEffect(() => {
+    const el = navLinksRef.current?.querySelector(
+      `[data-section="${activeSection}"]`,
+    );
+    if (el) {
+      const linkTop = el.offsetTop;
+      const linkHeight = el.offsetHeight;
+      const indicatorHeight = 28;
+      setIndicatorTop(linkTop + linkHeight / 2 - indicatorHeight / 2);
+    }
+  }, [activeSection]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const container = document.querySelector(".App-content");
+    if (element && container) {
+      container.scrollTo({
+        left: element.offsetLeft,
+        behavior: "smooth",
+      });
     }
   };
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'achievements', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-  ];
-
   return (
-    <nav className={`${styles.navigation} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.navigation} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navContent}>
-        <button
-          onClick={() => scrollToSection('home')}
-          className={styles.logo}
-        >
+        <button onClick={() => scrollToSection("home")} className={styles.logo}>
           <span className={styles.logoMark}>◆</span>
           <span className={styles.logoText}>Marco Guo</span>
         </button>
 
-        <div className={styles.navLinks}>
-          {navItems.map((item) => (
+        <div className={styles.navLinks} ref={navLinksRef}>
+          <div
+            className={styles.slidingIndicator}
+            style={{ top: indicatorTop }}
+            aria-hidden="true"
+          />
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
+              data-section={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`${styles.navLink} ${
-                activeSection === item.id ? styles.active : ''
+                activeSection === item.id ? styles.active : ""
               }`}
             >
               {item.label}
