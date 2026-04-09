@@ -83,6 +83,15 @@ export const projects = [
                                   github: 'https://github.com/Marc0Guo/INFO415-MCPServerAttacks',
         link:"https://docs.google.com/presentation/d/1hWP839S9QBLO0tWtW4nVEBia7MTsSt7o45W6x9LfdpU/edit?usp=sharing",
   },
+                                {
+    id: 10,
+    title: 'AI Observability Bot for Regulated Industry',
+    description: 'AI Customer Service Agent focus on Observability and Security',
+    image: process.env.PUBLIC_URL + '/assets/images/gekko.png',
+    tag: 'AI',
+    techStack: ['BeeAI', 'Splunk', 'Otel', 'Agenic AI'],
+                                  github: 'https://github.com/JAAMM-Gekko/ai-observability-bot'
+  },
 ];
 
 export const tags = ['All', 'Frontend', 'UI/UX', 'Backend', 'Data Science', "AI"];
