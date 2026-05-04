@@ -1,7 +1,6 @@
-/* Global App Styles */
 html {
   scroll-behavior: smooth;
-  background: #f2f7f5;
+  background: var(--bg-primary);
 }
 
 .App {
@@ -26,18 +25,15 @@ html {
   margin-left: 200px;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .App-content::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .App-content {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Section specific styles: each section = content area width (viewport minus nav) */
 #home, #skills, #achievements, #projects {
   min-width: 100%;
   width: 100%;

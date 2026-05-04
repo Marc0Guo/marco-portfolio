@@ -94,4 +94,4 @@ export const projects = [
   },
 ];
 
-export const tags = ['All', 'Frontend', 'UI/UX', 'Backend', 'Data Science', "AI"];
+export const tags = ['All', 'UI/UX', 'Data Science', 'AI'];

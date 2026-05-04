@@ -1,5 +1,5 @@
-// src/components/HeroSection.jsx
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./HeroSection.module.css";
 
 const ROLES = ["Software Engineer", "Data Scientist", "AI Enthusiast"];
@@ -7,6 +7,31 @@ const TYPE_DELAY = 120;
 const DELETE_DELAY = 80;
 const PAUSE_AFTER_TYPING = 1800;
 const PAUSE_AFTER_DELETING = 400;
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+  },
+};
+
+const fadeScale = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: 0.5 },
+  },
+};
 
 const HeroSection = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -41,35 +66,50 @@ const HeroSection = () => {
 
   return (
     <div className={styles.heroSection}>
-      <div className={styles.heroContent}>
-        <h1>
+      <motion.div
+        className={styles.heroContent}
+        variants={stagger}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1 variants={fadeUp}>
           <span className={styles.helloText}>Hello, I'm </span>
           <span className={styles.nameText}>Marco</span>
-        </h1>
-        <h2 className={styles.roleText} aria-live="polite">
+        </motion.h1>
+        <motion.h2
+          className={styles.roleText}
+          aria-live="polite"
+          variants={fadeUp}
+        >
           {displayedText}
           <span className={styles.typewriterCursor} aria-hidden="true" />
-        </h2>
-        <p className={styles.introText}>
+        </motion.h2>
+        <motion.p className={styles.introText} variants={fadeUp}>
           As a full-stack developer, I am dedicated to turning ideas into
           innovative web applications. Explore my latest projects, showcasing my
           expertise in software development.
-        </p>
-        <a
+        </motion.p>
+        <motion.a
           href={`${process.env.PUBLIC_URL}/assets/Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.resumeButton}
+          variants={fadeUp}
         >
           Resume ↗
-        </a>
-      </div>
-      <div className={styles.heroAvatar}>
+        </motion.a>
+      </motion.div>
+      <motion.div
+        className={styles.heroAvatar}
+        variants={fadeScale}
+        initial="hidden"
+        animate="visible"
+      >
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/Marco.png`}
           alt="Marco Avatar"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

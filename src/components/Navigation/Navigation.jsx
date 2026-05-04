@@ -11,7 +11,6 @@ const NAV_ITEMS = [
 ];
 
 const Navigation = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [indicatorTop, setIndicatorTop] = useState(0);
   const navLinksRef = useRef(null);
@@ -77,7 +76,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`${styles.navigation} ${scrolled ? styles.scrolled : ""}`}>
+    <nav className={styles.navigation}>
       <div className={styles.navContent}>
         <button onClick={() => scrollToSection("home")} className={styles.logo}>
           <span className={styles.logoMark}>◆</span>

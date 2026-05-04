@@ -36,7 +36,7 @@ const Project = () => {
 
       <div className={styles.grid}>
         {filteredProjects.map((project) => (
-          <div key={project.id} className={styles.card}>
+          <div key={project.id} className={`${styles.card} ${project.tag === 'AI' ? styles.cardAI : ''}`}>
             <img src={project.image} alt={project.title} className={styles.image} />
             <div className={styles.content}>
               <h3>{project.title}</h3>

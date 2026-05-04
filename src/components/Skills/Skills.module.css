@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 .skillsSection {
   height: 100vh;
   min-height: 100vh;
   width: 100%;
   padding: 2rem 5%;
-  background: linear-gradient(180deg, rgba(242,247,245,0.88) 0%, rgba(255,255,255,0.95) 50%, rgba(242,247,245,0.88) 100%);
-  color: #00473e;
+  background: transparent;
+  color: var(--text-primary);
   position: relative;
   overflow-y: auto;
   display: flex;
@@ -21,7 +19,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 51, 44, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .skillsContainer {
@@ -36,11 +34,11 @@
 }
 
 .title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  color: #00473e;
+  color: var(--text-primary);
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
@@ -49,15 +47,15 @@
 }
 
 .titleAccent {
-  color: #475d5b;
+  color: var(--accent);
   font-weight: 400;
   font-size: 1.4rem;
 }
 
 .subtitle {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  color: #475d5b;
+  color: var(--text-secondary);
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -70,10 +68,10 @@
 }
 
 .category {
-  background: #f2f7f5;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(0, 51, 44, 0.1);
+  border: 1px solid var(--border);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -87,7 +85,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #00473e, #faae2b);
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -95,8 +93,8 @@
 
 .category:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 51, 44, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(232, 112, 64, 0.08);
+  border-color: rgba(232, 112, 64, 0.2);
 }
 
 .category:hover::before {
@@ -104,14 +102,14 @@
 }
 
 .categoryTitle {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #00473e;
+  color: var(--text-primary);
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(0, 51, 44, 0.1);
+  border-bottom: 1px solid var(--border);
 }
 
 .iconsGrid {
@@ -143,18 +141,18 @@
   height: 40px;
   object-fit: contain;
   transition: filter 0.3s ease;
-  filter: grayscale(0.2);
+  filter: grayscale(0.4) brightness(0.9);
 }
 
 .iconWrapper:hover .skillIcon {
-  filter: grayscale(0) brightness(1.1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  filter: grayscale(0) brightness(1.1) drop-shadow(0 4px 12px rgba(232, 112, 64, 0.3));
 }
 
 .skillName {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 500;
-  color: #475d5b;
+  color: var(--text-secondary);
   text-align: center;
   transition: color 0.3s ease;
   width: 100%;
@@ -164,7 +162,7 @@
 }
 
 .iconWrapper:hover .skillName {
-  color: #00473e;
+  color: var(--accent);
 }
 
 @keyframes fadeInUp {
@@ -178,18 +176,6 @@
   }
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 900px) {
   .skillsSection {
     padding: 1.5rem 3%;

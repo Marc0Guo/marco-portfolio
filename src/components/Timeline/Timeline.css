@@ -3,8 +3,8 @@
     min-height: 100vh;
     width: 100%;
     padding: 2rem 1.5rem;
-    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(242,247,245,0.9) 50%, rgba(255,255,255,0.95) 100%);
-    color: #00473e;
+    background: transparent;
+    color: var(--text-primary);
     position: relative;
     overflow-y: auto;
     box-sizing: border-box;
@@ -17,7 +17,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 51, 44, 0.12), transparent);
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .achievements-section > h2 {
@@ -25,11 +25,11 @@
 }
 
 .achievements-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 2rem;
-    color: #00473e;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
     position: relative;
     display: inline-block;
@@ -44,7 +44,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #475d5b, transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     border-radius: 2px;
 }
 
@@ -55,7 +55,6 @@
     position: relative;
 }
 
-/* 确保timeline左对齐 */
 .timeline-container .MuiTimeline-root {
     padding: 0;
     margin: 0;
@@ -96,39 +95,39 @@
 }
 
 .timeline-container .MuiTimelineConnector-root {
-    background: linear-gradient(180deg, #00473e 0%, #475d5b 50%, #00473e 100%) !important;
+    background: linear-gradient(180deg, var(--accent) 0%, rgba(232, 112, 64, 0.3) 50%, var(--accent) 100%) !important;
     width: 2px !important;
     flex-grow: 1 !important;
     min-height: 28px !important;
-    opacity: 0.4;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
 }
 
 .timeline-container .MuiTimelineItem-root:hover ~ .MuiTimelineItem-root .MuiTimelineConnector-root,
 .timeline-container .MuiTimelineItem-root:hover .MuiTimelineConnector-root {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .timeline-date {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.8rem;
-    color: #475d5b;
+    color: var(--text-secondary) !important;
     letter-spacing: 0.02em;
     padding-right: 1.25rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-date {
-    color: #00473e;
+    color: var(--accent) !important;
     transform: translateX(-5px);
 }
 
 .timeline-paper {
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f2f7f5 100%);
+    background: var(--bg-card) !important;
     border-radius: 12px;
-    border: 1px solid rgba(0, 51, 44, 0.1);
+    border: 1px solid var(--border);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -142,17 +141,17 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #00473e, #faae2b);
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-paper:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(232, 112, 64, 0.08) !important;
     transform: translateY(-3px) translateX(3px);
-    border-color: rgba(0, 51, 44, 0.15);
-    background: linear-gradient(135deg, #ffffff 0%, #f2f7f5 100%);
+    border-color: rgba(232, 112, 64, 0.2);
+    background: var(--bg-card) !important;
 }
 
 .timeline-paper:hover::before {
@@ -160,25 +159,25 @@
 }
 
 .timeline-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-display) !important;
     font-weight: 700;
-    color: #00473e;
+    color: var(--text-primary) !important;
     margin-bottom: 0.4rem;
-    font-size: 1.05rem;
+    font-size: 1.05rem !important;
     letter-spacing: -0.01em;
     transition: color 0.3s ease;
 }
 
 .timeline-paper:hover .timeline-title {
-    color: #00332c;
+    color: var(--accent) !important;
 }
 
 .timeline-location {
-    font-family: 'Poppins', sans-serif;
-    color: #475d5b;
+    font-family: var(--font-body) !important;
+    color: var(--text-secondary) !important;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -191,24 +190,24 @@
 }
 
 .timeline-description {
-    font-family: 'Poppins', sans-serif;
-    color: #475d5b;
+    font-family: var(--font-body) !important;
+    color: var(--text-secondary) !important;
     line-height: 1.55;
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
     font-weight: 400;
     transition: color 0.3s ease;
 }
 
 .timeline-paper:hover .timeline-description {
-    color: #00473e;
+    color: var(--text-primary) !important;
 }
 
 .timeline-dot-icon {
     width: 10px;
     height: 10px;
-    background: linear-gradient(135deg, #00473e 0%, #00332c 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
     border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 71, 62, 0.3);
+    box-shadow: 0 2px 8px rgba(232, 112, 64, 0.4);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
@@ -221,7 +220,7 @@
     transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
-    background: rgba(0, 71, 62, 0.15);
+    background: rgba(232, 112, 64, 0.15);
     border-radius: 50%;
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -229,8 +228,8 @@
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon {
     transform: scale(1.3);
-    background: linear-gradient(135deg, #faae2b 0%, #00473e 100%);
-    box-shadow: 0 4px 12px rgba(250, 174, 43, 0.4);
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+    box-shadow: 0 4px 16px rgba(232, 112, 64, 0.5);
 }
 
 .timeline-container .MuiTimelineItem-root:hover .timeline-dot-icon::before {
@@ -238,7 +237,6 @@
     transform: translate(-50%, -50%) scale(1.5);
 }
 
-/* Animation for timeline items */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -254,31 +252,13 @@
     animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.timeline-container .MuiTimelineItem-root:nth-child(1) {
-    animation-delay: 0.1s;
-}
+.timeline-container .MuiTimelineItem-root:nth-child(1) { animation-delay: 0.1s; }
+.timeline-container .MuiTimelineItem-root:nth-child(2) { animation-delay: 0.2s; }
+.timeline-container .MuiTimelineItem-root:nth-child(3) { animation-delay: 0.3s; }
+.timeline-container .MuiTimelineItem-root:nth-child(4) { animation-delay: 0.4s; }
+.timeline-container .MuiTimelineItem-root:nth-child(5) { animation-delay: 0.5s; }
+.timeline-container .MuiTimelineItem-root:nth-child(6) { animation-delay: 0.6s; }
 
-.timeline-container .MuiTimelineItem-root:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.timeline-container .MuiTimelineItem-root:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.timeline-container .MuiTimelineItem-root:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.timeline-container .MuiTimelineItem-root:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.timeline-container .MuiTimelineItem-root:nth-child(6) {
-    animation-delay: 0.6s;
-}
-
-/* 移动端响应式 */
 @media only screen and (max-width: 768px) {
     .achievements-section {
         padding: 1.5rem 1rem;
@@ -308,15 +288,15 @@
     }
 
     .timeline-title {
-        font-size: 0.95rem;
+        font-size: 0.95rem !important;
     }
 
     .timeline-location {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
     }
 
     .timeline-description {
-        font-size: 0.75rem;
+        font-size: 0.75rem !important;
     }
 
     .timeline-paper:hover {
